@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membuat Gambar Berada Di Tengah View Port</title>
+    <style>
+        :root {
+            --pr-color: #048853
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            margin: 0;
+            padding: 0;
+            width: 400px;
+            transform: rotate(180deg);
+            opacity: 3;
+        }
+
+        .berputar:hover {
+            transform: rotate(360deg);
+        }
+
+
+        .box {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background-color: var(--pr-color);
+        }
+
+        .berputar {
+            border: 3px solid blue;
+            transform: rotate(360deg);
+            transition: 4s all ease;
+        }
+
+        button {
+            position: absolute;
+            left: 45%;
+
+            bottom: 60px;
+        }
+
+        .ganti {
+            background-color: black;
+        }
+
+        @media (max-width:578px) {
+            .box {
+                background-color: red;
+            }
+
+            img {
+                background-size: cover;
+                width: 90%;
+            }
+
+            button {
+                position: absolute;
+                bottom: 34%;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+        <img src="ANIMASI.jpg" alt="">
+        <button onclick="tekan()">Klik Me❤️</button>
+    </div>
+</body>
+<script>
+    function tekan() {
+        let gambarRotate = document.getElementsByTagName('img');
+        gambarRotate[0].classList.add('berputar')
+
+
+    }
+</script>
+
+</html>
